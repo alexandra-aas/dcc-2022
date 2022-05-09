@@ -1,0 +1,79 @@
+.about__content {
+  @include container;
+  @include section-indented;
+}
+
+.about__title {
+  @include section-title;
+}
+
+.about__sections {
+  @include section-spacing(padding-bottom);
+  position: relative;
+  z-index: 0;
+
+  @include mq($bp--tablet-xl) {
+    @include lines($left: true);
+  }
+}
+
+.about__section {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-of-type) {
+    margin-bottom: $spacing--md;
+  }
+
+  @include mq($bp--tablet-xl) {
+    flex-direction: row;
+
+    &:not(:last-of-type) {
+      margin-bottom: $spacing--lg;
+    }
+  }
+}
+
+.about__figure {
+  @include figure-reset;
+  flex: 2;
+
+  @include mq(max, $bp--tablet-xl) {
+    width: 100%;
+  }
+
+  @include mq(max, $bp--desktop) {
+    margin-bottom: $spacing--base;
+  }
+
+  @include mq($bp--tablet-xl) {
+    box-shadow: $box-shadow--cover-lines;
+    margin-right: $spacing--md;
+  }
+
+  @include mq($bp--desktop-xl) {
+    margin-right: $spacing--lg;
+  }
+}
+
+.about__image {
+  width: 100%;
+}
+
+.about__section-content {
+  flex: 4;
+
+  @include mq($bp--desktop) {
+    flex: 2;
+  }
+}
+
+.about__number {
+  @include fancy-number;
+  margin-bottom: $spacing--base;
+
+  @include mq($bp--tablet-xl) {
+    margin-bottom: $spacing--md;
+  }
+}

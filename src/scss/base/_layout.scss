@@ -1,0 +1,34 @@
+body {
+  @include fluid-type(
+    $bp--tablet,
+    $bp--desktop-xl,
+    $font-size--sm,
+    $font-size--base
+  );
+  background-color: $color--tan;
+  color: $color--gray;
+  font-family: $font--secondary;
+  font-size: $font-size--base;
+  line-height: $lh--base;
+  -moz-osx-font-smoothing: grayscale;
+  padding-left: $outer-padding;
+  padding-right: $outer-padding;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  @include mq($bp--desktop) {
+    padding-top: $nav-height;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.hidden {
+  @include absolute(auto null null -10000px);
+  @include size(1px);
+  overflow: hidden;
+}

@@ -1,0 +1,11 @@
+.stamp {
+  @include size($stamp-size);
+  align-items: center;
+  background-color: $color--coral;
+  border-radius: 50%;
+  color: $color--hunter;
+  display: flex;
+  justify-content: center;
+  padding: $spacing--xs;
+  text-align: center;
+}

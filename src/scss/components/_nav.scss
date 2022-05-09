@@ -1,0 +1,58 @@
+.nav {
+  @include fixed(0 0 null);
+  background-color: $color--dark-tan;
+  display: flex;
+  font-size: $font-size--xs;
+  font-family: $font--primary;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-left: $outer-padding;
+  padding-right: $outer-padding;
+  z-index: $z-index--nav;
+
+  @include mq(max, $bp--desktop) {
+    display: none;
+    height: 0;
+  }
+}
+
+.nav__items {
+  @include margin(0 null);
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav__item:not(:last-of-type) {
+  margin-right: $spacing--md;
+}
+
+.nav__link {
+  color: $color--hunter;
+  display: block;
+  line-height: $nav-height;
+  position: relative;
+
+  &::after {
+    @include absolute(null 0 0);
+    background-color: currentColor;
+    content: '';
+    height: $border-width--thick;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.nav__cta {
+  @include button-base;
+  @include absolute(0 0 null null);
+  line-height: $nav-height;
+  padding-left: $spacing--md;
+  padding-right: $spacing--md;
+}

@@ -1,0 +1,15 @@
+@mixin tag($location) {
+  @include h4;
+  background-color: $color--hunter;
+  color: $color--tan;
+  padding: $spacing--xs $spacing--sm;
+
+  @if $location == 'left' {
+    border-top-right-radius: $border-radius--lg;
+    border-bottom-left-radius: $border-radius--lg;
+  }
+
+  @if $location == 'center' {
+    border-radius: $border-radius--lg;
+  }
+}

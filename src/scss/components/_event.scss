@@ -1,0 +1,76 @@
+.event {
+  @include event-border;
+  display: flex;
+  flex-direction: column;
+  margin-top: $stamp-size--half;
+  justify-content: flex-end;
+
+  &.inactive {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  @include mq(max, $bp--tablet) {
+    margin-right: $spacing--base;
+    min-width: 80vw;
+
+    &.inactive {
+      display: none;
+    }
+  }
+
+  @include mq($bp--tablet, $bp--desktop) {
+    @include event-grid(2);
+  }
+
+  @include mq($bp--desktop, $bp--desktop-xl) {
+    @include event-grid(3);
+  }
+
+  @include mq($bp--desktop-xl) {
+    @include event-grid(4);
+  }
+}
+
+.event__for {
+  @include event-for(event, null $spacing--base 100% null, 0, 50%)
+}
+
+.event__content {
+  padding: $spacing--md;
+}
+
+.event__date {
+  @include event-date;
+  @include absolute(null null 100%);
+  background-color: $color--tan;
+  outline: $outline--cover-lines;
+  transform: translateY(50%);
+  z-index: 1;
+}
+
+.event__title {
+  @include margin($spacing--lg null $spacing--base);
+}
+
+.event__location {
+  @include event-location;
+}
+
+.event__type {
+  @include tag(left);
+  @include absolute(null null 0 0);
+}
+
+.event__figure {
+  @include event-figure;
+  @include size(100%, 0);
+  border-bottom-right-radius: $border-radius--lg;
+  border-bottom-left-radius: $border-radius--lg;
+  padding-bottom: 60%;
+}
+
+.event__image {
+  @include event-image(event);
+  background-size: cover;
+}

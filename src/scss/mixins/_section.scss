@@ -1,0 +1,61 @@
+@mixin section-indented {
+  @include mq($bp--desktop-xl) {
+    @include section-spacing(padding-left);
+    @include section-spacing(padding-right);
+  }
+}
+
+@mixin section-spacing($property, $multiplier: 1) {
+  #{$property}: $section-spacing--sm * $multiplier;
+
+  @include mq($bp--tablet) {
+    #{$property}: $section-spacing--base * $multiplier;
+  }
+
+  @include mq($bp--desktop) {
+    #{$property}: $section-spacing--lg * $multiplier;
+  }
+}
+
+@mixin section-title($reversed: false) {
+  @if $reversed {
+    margin-bottom: $spacing--sm;
+
+    @include mq($bp--tablet) {
+      margin-bottom: $spacing--base;
+    }
+  }
+
+  @else {
+    @include margin($spacing--lg null $spacing--md);
+    color: $color--hunter;
+    text-align: center;
+
+    @include mq($bp--desktop) {
+      @include margin($spacing--xl null $spacing--lg);
+    }
+  }
+}
+
+@mixin section-reversed {
+  @include container;
+  background-color: $color--hunter ;
+  border-radius: $border-radius--lg;
+  color: $color--tan;
+  overflow: hidden;
+  position: relative;
+
+  @include mq(max, $bp--tablet) {
+    @include margin(null (-$outer-padding));
+    @include section-spacing(padding-left);
+    @include section-spacing(padding-right);
+    border-radius: 0;
+    padding-bottom: $spacing--md;
+    padding-top: $spacing--md;
+    width: 100vw;
+  }
+
+  @include mq($bp--tablet) {
+    @include section-spacing(padding);
+  }
+}

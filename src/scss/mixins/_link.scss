@@ -1,0 +1,11 @@
+@mixin underline-link {
+  @include h4;
+  border-bottom: $border-width--thick solid $color--coral;
+  color: $color--hunter;
+  padding-bottom: 3px;
+  transition: border-color 300ms ease-in-out;
+
+  &:hover {
+    border-color: currentColor;
+  }
+}

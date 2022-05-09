@@ -1,0 +1,32 @@
+.footer__inner {
+  @include container;
+  font-weight: 500;
+  line-height: $lh--lg;
+  padding-bottom: $spacing--md;
+  padding-top: $spacing--md;
+  text-align: center;
+
+  @include mq($bp--desktop) {
+    @include lines($left: true, $multiplier: 2);
+    padding-bottom: $spacing--lg;
+    padding-top: $spacing--lg;
+  }
+}
+
+.footer__list {
+  @include margin(0 null $spacing--xs);
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer__item {
+  display: inline-block;
+
+  &:not(:last-of-type) {
+    margin-right: $spacing--xs;
+  }
+}
+
+.footer__link {
+  @include underline-link;
+}

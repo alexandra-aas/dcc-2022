@@ -1,0 +1,26 @@
+.events {
+  @include section-spacing(margin-bottom);
+  @include section-spacing(margin-top);
+}
+
+.events__title {
+  @include section-title;
+}
+
+.events__content {
+  display: flex;
+
+  @include mq(max, $bp--tablet) {
+    @include margin(null (-$outer-padding));
+    overflow-x: scroll;
+    padding-left: $outer-padding;
+    padding-right: $outer-padding;
+    -webkit-overflow-scrolling:touch;
+    width: 100vw;
+  }
+
+  @include mq($bp--tablet) {
+    @include container;
+    flex-wrap: wrap;
+  }
+}

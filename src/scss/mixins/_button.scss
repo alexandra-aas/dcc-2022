@@ -1,0 +1,13 @@
+@mixin button-base {
+  @include h4;
+  background-color: $color--coral;
+  color: $color--hunter;
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $color--hunter;
+    color: $color--coral;
+  }
+}

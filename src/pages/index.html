@@ -1,121 +1,152 @@
 ---
-## Note: menu items can be edited via /src/data/menu.json
-
-title: Prototype Index
-thumbnail: false
+title: DCC
 ---
 
-{% extends "@templates/layouts/menu.twig" %}
-
-{% set config = site.data['menu.json'] %}
-{% set groupedPages = site.pages|group('group') %}
-{% set ungroupedPages = groupedPages['undefined']|default([]) %}
-
 {% block content %}
-<header class="menu-header">
-  <div class="menu-header__ups-lockup">
-    {% if config.logo %}
-      {% if config.logo.url %}
-        <a href="{{ config.logo.url }}" target="_blank">
-      {% endif %}
-      <img class="logo" src="{{ config.logo.src }}" alt="{{ config.logo.alt | default('') }}" />
-      {% if config.logo.url %}
-        </a>
-      {% endif %}
-    {% endif %}
-
-    {% if config.header_links|length %}
-    <nav class="menu-header__outlinks">
-      <ul class="menu-header__outlinks-list">
-        {% for link in config.header_links %}
-        <li class="menu-header__outlinks-item">
-          <a class="menu-header__outlinks-link" href="{{ link.url }}">{{ link.label }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
-    {% endif %}
-  </div>
-  <h1 class="menu-header__title">{{ page.title }}</h1>
-</header>
-
-<nav class="menu-content">
-
-  {% if ungroupedPages is not empty %}
-  <ul class="menu-content__list">
-
-    {% for p in ungroupedPages if p.path != page.path and p.menu != false %}
-      {% set thumbnail = p.thumbnail matches '/auto/i' ? p.screenshot : p.thumbnail %}
-      <li class="menu-content__item{% if p.thumbnail %} menu-content__item--has-thumbnail{% else %} menu-content__item--no-thumbnail{% endif %}">
-        <a class="menu-content__link" href="{{ puppy.url(p) }}">
-
-          {% if thumbnail %}
-          <div class="menu-content__images">
-            <img src="{{ puppy.siteUrl('thumbnails/' ~ thumbnail) }}" alt="{{ p.title }}" />
-          </div>
-          {% endif %}
-
-          <div class="menu-content__text">
-            <div class="menu-content__text-inner">
-              <h2 class="menu-content__title">{{ p.title }}</h2>
-              {% if p.description %}
-                <p class="menu-content__description">{{ p.description }}</p>
-              {% endif %}
-              {% if p.updated %}
-                <h4 class="menu-content__updated">{{ p.updated }}</h4>
-              {% endif %}
-              {% if thumbnail %}
-                {% include '@templates/svgs/menu/circle-arrow.twig' %}
-              {% endif %}
-            </div>
-          </div>
-
-          {% if not thumbnail %}
-            <div class="menu-content__images">
-              {% include '@templates/svgs/menu/circle-arrow.twig' %}
-            </div>
-          {% endif %}
-
-        </a>
-      </li>
-    {% endfor %}
-
+<nav class="nav">
+  <ul class="nav__items">
+    <li class="nav__item"><a class="nav__link" href="#mission">Our Mission</a></li>
+    <li class="nav__item"><a class="nav__link" href="#events">2022 Events</a></li>
+    <li class="nav__item"><a class="nav__link" href="#about">About Us</a></li>
   </ul>
-  {% endif %}
-
-  {% for group, pages in groupedPages if group != 'undefined' %}
-    <section class="menu-content__group">
-      <h3 class="menu-content__group-head">{{ group }}</h3>
-      <ul class="menu-content__group-pages">
-      {% for p in pages if p.path != page.path and p.menu != false %}
-        {% set thumbnail = p.thumbnail matches '/auto/i' ? p.screenshot : p.thumbnail %}
-        <li class="menu-content__group-item">
-          <a href="{{ puppy.url(p) }} " class="menu-content__group-item-link">
-            {% if thumbnail %}
-              <img class="menu-content__small-thumb" src="{{ puppy.siteUrl('thumbnails/' ~ thumbnail) }}" alt="{{ p.title }}" />
-            {% endif %}
-            <div class="menu-content__small-text">
-              <div class="menu-content__small-text-inner">
-                <h2 class="menu-content__small-title">{{ p.title }}</h2>
-                {% if p.updated %}
-                  <h4 class="menu-content__small-updated">{{ p.updated }}</h4>
-                {% endif %}
-              </div>
-              {% include '@templates/svgs/menu/circle-arrow.twig' %}
-            </div>
-          </a>
-        </li>
-      {% endfor %}
-      </ul>
-    </section>
-  {% endfor %}
-
+  <a class="nav__cta" href="TODO: donate_link" target="_blank">Donate</a>
 </nav>
 
-<footer class="menu-footer">
-  <div class="menu-footer__inner">
-    <p><a href="https://github.com/Upstatement/puppy">Built with Puppy</a></p>
+<section class="topper">
+  <div class="topper__content">
+    <h1>
+      Dedham
+      <br/>
+      Cycle
+      <br/>
+      Club
+    </h1>
+    <p class="topper__subhead">
+      Fostering a welcoming & safe
+      <br/>
+      bike community in Dedham.
+    </p>
+    <a class="topper__cta" href="#mission">Learn More</a>
+  </div>
+  <div class="topper__featured-event">
+    TODO Events
+  </div>
+</section>
+
+<section class="mission" id="mission">
+  <div class="mission__content">
+    <h2 class="mission__title">Our Mission</h2>
+    <p class="mission__statement">
+      Our mission is to foster a safe and welcoming bike community through group rides, cycling
+      events, and through collaboration with our town government and local businesses and
+      organizations. In 2018, we worked towards these goals by introducing,
+      <a class="mission__highlight" href="https://www.facebook.com/dedhamcycleclub/photos/a.459796784454171/467571773676672/?type=3&theater" target="_blank">new bike racks at Endicott Station</a>
+      advocating for cycling in future town improvement projects, and through
+      <a class="mission__highlight" href="#events">various rides we hosted</a>
+      for all ages and abilities.
+    </p>
+    <p class="mission__attribution">
+      Ali, Cindy, Danielle,
+      <br/>
+      Georganna, & Gianna
+    </p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about__content">
+    <h2 class="about__title">About Us</h2>
+    <div class="about__sections">
+      <article class="about__section">
+        <figure class="about__figure">
+          <img class="about__image" src="1894.png" />
+        </figure>
+        <div class="about__section-content">
+          <h3>Established</h3>
+          <div class="about__number">
+            1894
+          </div>
+          <p class="about__description">
+            During the late 1800's the popularity of cycling increased exponentially and
+            Massachusetts was at the center of the craze. The Boston Cycle Club was the first of its
+            kind in the nation and it soon became associated with the League of American Wheelmen, a
+            national organization established in 1880. By 1892, the craze had officially spread to
+            Dedham. That year, the original Dedham Cycle Club was established and their inaugural
+            ride attracted 8,000 riders on Patriot's Day of that year.
+          </p>
+        </div>
+      </article>
+      <article class="about__section">
+        <figure class="about__figure">
+          <img class="about__image" src="2018.png" />
+        </figure>
+        <div class="about__section-content">
+          <h3>Re-established</h3>
+          <div class="about__number">
+            2018
+          </div>
+          <p>
+            In 2018, the Dedham Cycle Club was restarted by a group of local residents. Today our
+            club organizes fun group rides for all ages & skill levels and supports events and
+            activities that encourage cycling. On our rides, safety comes first; no one gets left
+            out or left behind. We hope that our organization will help to promote a healthy and
+            active lifestyle and create awareness about the benefits of cycling.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <h2 class="join__title">Join Us</h2>
+  <p class="join__text">
+    Interested in becoming a part of our growing community? Sign up for our newsletter to stay
+    up to date on our programming.
+  </p>
+  <div class="join__form">
+    <div id="mc_embed_signup">
+      <form action="https://facebook.us19.list-manage.com/subscribe/post?u=71aa0f98abb3b2f6b6ae59031&amp;id=45a57c453d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <fieldset>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL" class="hidden">Email Address</label>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+            </div>
+    
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+    
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_71aa0f98abb3b2f6b6ae59031_45a57c453d" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <ul class="footer__list">
+      <li class="footer__item">
+        <a class="footer__link" href="https://www.facebook.com/dedhamcycleclub/" target="_blank">Facebook</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="mailto:dedhamcycleclub@gmail.com" target="_blank">Email</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="https://twitter.com/dedhamcycleclub" target="_blank">Twitter</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="TODO donate_link" target="_blank">Donate</a>
+      </li>
+    </ul>
+    <small>
+      Copyright © 2022
+    </small>
   </div>
 </footer>
-
 {% endblock %}

@@ -1,0 +1,26 @@
+.join {
+  @include margin($cover-lines-size null);
+  @include section-reversed;
+  background-image: image-url('pr-cycle.png');
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  background-position: 95% bottom;
+
+  @include mq($bp--tablet) {
+    background-size: auto 90%;
+  }
+}
+
+.join__title {
+  @include section-title(true);
+}
+
+.join__text {
+  @include mq($bp--desktop) {
+    max-width: 50%;
+  }
+}
+
+.join__form {
+  margin-top: $spacing--md;
+}

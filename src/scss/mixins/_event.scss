@@ -1,0 +1,73 @@
+@mixin event-grid($count) {
+  margin-right: $event-gutter;
+  width: calc((100% - #{$event-gutter * ($count - 1)}) / #{$count});
+
+  &:nth-child(#{$count}n) {
+    margin-right: 0;
+  }
+
+  &:nth-of-type(n+#{$count + 1}) {
+    margin-top: $stamp-size--half + $spacing--lg;
+  }
+}
+
+@mixin event-border {
+  display: block;
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    @include absolute(0);
+    border: $border--thin;
+    border-radius: $border-radius--lg;
+    content: '';
+    transition: border-color 300ms ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      border-color: $color--hunter;
+    }
+  }
+}
+
+@mixin event-for($parent-class, $position, $translateX: 0, $translateY: 0) {
+  @include absolute($position);
+  transform: translate($translateX, $translateY) rotate($stamp-rotation--before);
+  z-index: 1;
+
+  .#{$parent-class}:hover & {
+    transform: translate($translateX, $translateY) rotate($stamp-rotation--after);
+    transition: transform 500ms $transition--easeInOutBack;
+  }
+}
+
+@mixin event-date {
+  @include fluid-type($bp--tablet, $bp--desktop, $font-size--xs, $font-size--base);
+  color: $color--hunter;
+  font-family: $font--primary;
+}
+
+@mixin event-location {
+  color: $color--gray;
+  font-size: $font-size--xs;
+}
+
+@mixin event-figure {
+  @include figure-reset;
+  background-color: $color--dark-tan;
+  overflow: hidden;
+  position: relative;
+}
+
+@mixin event-image($parent-class) {
+  @include absolute(0);
+  background-blend-mode: multiply;
+  background-position: center;
+  filter: grayscale(100%);
+  transition: transform 500ms ease-in-out;
+
+  .#{$parent-class}:hover & {
+    transform: scale(1.1);
+  }
+}

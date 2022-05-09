@@ -1,0 +1,37 @@
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+p {
+  @include margin(0 null $spacing--base);
+  line-height: $lh--md;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+small {
+  font-size: $font-size--xs;
+  font-weight: 500;
+}
+
+img {
+  display: block;
+}

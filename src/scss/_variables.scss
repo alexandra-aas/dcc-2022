@@ -1,0 +1,104 @@
+// Fonts
+$font--secondary: "Work Sans", sans-serif;
+$font--primary: "Adieu";
+
+// Font Sizes
+$font-size--xxs: 12px;
+$font-size--xs: 16px;
+$font-size--sm: 18px;
+$font-size--base: 20px;
+$font-size--md: 24px;
+$font-size--lg: 30px;
+$font-size--xl: 50px;
+$font-size--xxl: 70px;
+$font-size--xxxl: 90px;
+
+// Font Sizes Applied
+$font-size--h1-max: $font-size--xxxl;
+$font-size--h1-min: $font-size--xl;
+//--
+$font-size--h2-max: $font-size--xxl;
+$font-size--h2-min: $font-size--lg;
+//--
+$font-size--h3-max: $font-size--md;
+$font-size--h3-min: $font-size--base;
+//--
+$font-size--h4: $font-size--xxs;
+//--
+$font-size--body-lg-max: $font-size--xl;
+$font-size--body-lg-min: $font-size--sm;
+//--
+$font-size--body-md-max: $font-size--md;
+$font-size--body-md-min: $font-size--sm;
+
+// Line Heights
+$lh--sm: 1.25;
+$lh--base: 1.5;
+$lh--md: 1.6;
+$lh--lg: 2;
+
+// Colors
+$color--white: #ffffff;
+$color--black: #000000;
+$color--gray: #6e6868;
+$color--tan: #f0eee7;
+$color--dark-tan: #e8e5dc;
+$color--hunter: #183428;
+$color--spruce: #3d5a4e;
+$color--coral: #ffa369;
+
+// Spacing
+$spacing--xxs: 5px;
+$spacing--xs: 10px;
+$spacing--sm: 15px;
+$spacing--base: 20px;
+$spacing--md: 40px;
+$spacing--lg: 60px;
+$spacing--xl: 120px;
+
+// Borders
+$border-width--thin: 1px;
+$border-width--thick: 2px;
+$border--thin: $border-width--thin solid rgba($color--black, 0.2);
+
+// Cover Lines
+$cover-lines-size: 10px;
+$box-shadow--cover-lines: 0 (-$spacing--xs) $color--tan,
+  0 $spacing--sm $color--tan;
+$outline--cover-lines: $cover-lines-size solid $color--tan;
+
+// Border Radius
+$border-radius--sm: 3px;
+$border-radius--lg: 6px;
+
+// Sizes
+$container-width: 1600px;
+$event-gutter: $spacing--base;
+$featured-event-content-width: 350px;
+$featured-event-figure-width: 300px;
+$nav-height: $spacing--lg;
+$outer-padding: $spacing--base;
+$section-spacing--sm: $outer-padding;
+$section-spacing--base: $spacing--lg;
+$section-spacing--lg: $spacing--xl;
+$stamp-size: 100px;
+$stamp-size--half: $stamp-size / 2;
+
+// Transforms
+$stamp-rotation--before: 20deg;
+$stamp-rotation--after: 380deg;
+
+// Transitions
+$transition--easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Z Indeces
+$z-index--nav: 100;
+
+// Breakpoints
+$bp--mobile: 370px;
+$bp--phablet: 450px;
+$bp--phablet-xl: 550px;
+$bp--tablet: 600px;
+$bp--tablet-xl: 768px;
+$bp--desktop: 1070px;
+$bp--desktop-xl: 1550px;

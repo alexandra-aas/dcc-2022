@@ -1,0 +1,31 @@
+@mixin lines($right: false, $left: false, $multiplier: 1) {
+  overflow-y: hidden;
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    @include absolute(0 null);
+    background: image-url('lines.svg') repeat-y;
+    content: '';
+    width: 84px;
+    z-index: -1;
+
+    @if $right {
+      @include section-spacing(right, 1);
+    }
+
+    @if $left {
+      @include section-spacing(left, 1);
+    }
+
+    @include mq($bp--desktop-xl) {
+      @if $right {
+        @include section-spacing(right, $multiplier);
+      }
+
+      @if $left {
+        @include section-spacing(left, $multiplier);
+      }
+    }
+  }
+}

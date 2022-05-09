@@ -1,0 +1,72 @@
+.mission {
+  @include section-reversed;
+  background-image: image-url('logo.svg');
+  background-repeat: no-repeat;
+  background-position: 90% bottom;
+  background-size: auto 90px;
+
+  @include mq($bp--tablet) {
+    background-size: auto 200px;
+  }
+
+  @include mq($bp--desktop) {
+    background-size: auto 400px;
+  }
+}
+
+.mission__title {
+  @include section-title(true);
+}
+
+.mission__statement,
+.mission__attribution {
+  @include body--lg;
+}
+
+.mission__highlight {
+  @include mq(max, $bp--tablet) {
+    border-bottom: $border-width--thick solid $color--coral;
+    color: $color--tan;
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+      color: $color--coral;
+    }
+  }
+
+  @include mq($bp--tablet) {
+    @include margin(null $spacing--xs);
+    background-color: $color--coral;
+    box-shadow:
+      $spacing--xs 0 0 $color--coral,
+      -$spacing--xs 0 0 $color--coral;
+    color: $color--hunter;
+    transition:
+      background-color 300ms ease-in-out,
+      box-shadow 300ms ease-in-out;
+
+    &:hover {
+      background-color: $color--tan;
+      box-shadow:
+        $spacing--xs 0 0 $color--tan,
+        -$spacing--xs 0 0 $color--tan;
+    }
+  }
+}
+
+.mission__attribution::before {
+  @include margin($spacing--base null);
+  @include size($spacing--lg, $spacing--xxs);
+  background-color: $color--spruce;
+  content: '';
+  display: block;
+
+  @include mq($bp--tablet) {
+    @include margin($spacing--md null);
+    height: $spacing--xs;
+  }
+
+  @include mq($bp--desktop) {
+    @include margin($spacing--lg null);
+  }
+}

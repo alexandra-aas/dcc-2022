@@ -1,0 +1,107 @@
+.featured-event {
+  @include event-border;
+
+  @include mq(max, $bp--tablet-xl) {
+    position: relative;
+  }
+
+  @include mq($bp--tablet-xl) {
+    display: flex;
+  }
+}
+
+.featured-event__for {
+  @include event-for(featured-event, $spacing--lg 0 null null, 50%, 0)
+}
+
+.featured-event__content {
+  text-align: center;
+
+  @include mq($bp--tablet-xl) {
+    width: $featured-event-content-width;
+  }
+}
+
+.featured-event__next {
+  align-items: center;
+  background-color: $color--coral;
+  border-top-left-radius: $border-radius--lg;
+  color: $color--hunter;
+  display: flex;
+  height: $spacing--md;
+  justify-content: center;
+}
+
+.featured-event__body {
+  background-color: $color--tan;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing--md;
+
+  @include mq($bp--tablet-xl) {
+    position: relative;
+    padding-bottom: $spacing--lg;
+  }
+}
+
+.featured-event__month {
+  @include event-date;
+}
+
+.featured-event__day {
+  @include fancy-number;
+}
+
+.featured-event__title {
+  margin: $spacing--base auto $spacing--md;
+  max-width: $featured-event-content-width;
+
+  @include mq($bp--tablet-xl) {
+    margin-bottom: $spacing--xl;
+  }
+}
+
+.featured-event__location {
+  @include event-location;
+}
+
+.featured-event__type {
+  @include absolute(null null 0 0);
+  @include tag(left);
+  z-index: 1;
+
+  @include mq($bp--tablet-xl) {
+    @include absolute(null null 0 50%);
+    @include tag(center);
+    outline: $outline--cover-lines;
+    transform: translate(-50%, 50%);
+  }
+}
+
+.featured-event__figure {
+  @include event-figure;
+
+  @include mq(0, $bp--tablet-xl) {
+    @include size(100%, 0);
+    border-bottom-right-radius: $border-radius--lg;
+    border-bottom-left-radius: $border-radius--lg;
+    padding-bottom: 60%;
+  }
+
+  @include mq($bp--tablet-xl) {
+    @include absolute(0 0 0 null);
+    border-bottom-right-radius: $border-radius--lg;
+    border-top-right-radius: $border-radius--lg;
+    width: calc(100% - #{$featured-event-content-width});
+  }
+}
+
+.featured-event__image {
+  @include event-image(featured-event);
+  @include size(100%);
+  background-size: cover;
+
+  @include mq($bp--tablet-xl) {
+    background-size: contain;
+  }
+}
