@@ -9,12 +9,13 @@
 
     {% block styles %}
     <link rel="stylesheet" type="text/css" href="{{ puppy.assetUrl('main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     {% endblock %}
   </head>
   <body>
-    <div class="site-content">
-      {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
 
     {% block scripts %}
     <script type="text/javascript" src="{{ puppy.assetUrl('vendor.js') }}"></script>

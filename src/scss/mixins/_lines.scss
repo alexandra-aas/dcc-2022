@@ -5,7 +5,7 @@
 
   &::after {
     @include absolute(0 null);
-    background: image-url('lines.svg') repeat-y;
+    background: url('/static/img/lines.svg') repeat-y;
     content: '';
     width: 84px;
     z-index: -1;

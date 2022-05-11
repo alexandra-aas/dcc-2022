@@ -11,7 +11,7 @@
 }
 
 .featured-event__for {
-  @include event-for(featured-event, $spacing--lg 0 null null, 50%, 0)
+  @include event-for(featured-event, $spacing--lg 0 null null, 50%, 0);
 }
 
 .featured-event__content {
@@ -39,8 +39,8 @@
   padding: $spacing--md;
 
   @include mq($bp--tablet-xl) {
-    position: relative;
     padding-bottom: $spacing--lg;
+    position: relative;
   }
 }
 
@@ -83,8 +83,8 @@
 
   @include mq(0, $bp--tablet-xl) {
     @include size(100%, 0);
-    border-bottom-right-radius: $border-radius--lg;
     border-bottom-left-radius: $border-radius--lg;
+    border-bottom-right-radius: $border-radius--lg;
     padding-bottom: 60%;
   }
 

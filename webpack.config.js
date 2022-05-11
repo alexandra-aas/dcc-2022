@@ -8,7 +8,6 @@ module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
     main: ['./src/js/main.js', './src/scss/main.scss'],
-    reset: './src/scss/reset.scss',
   },
   output: {
     path: path.resolve(__dirname, 'dist/assets'),

@@ -2,13 +2,8 @@
   @include event-border;
   display: flex;
   flex-direction: column;
-  margin-top: $stamp-size--half;
   justify-content: flex-end;
-
-  &.inactive {
-    pointer-events: none;
-    opacity: 0.5;
-  }
+  margin-top: $stamp-size--half;
 
   @include mq(max, $bp--tablet) {
     margin-right: $spacing--base;
@@ -30,10 +25,15 @@
   @include mq($bp--desktop-xl) {
     @include event-grid(4);
   }
+
+  &.inactive {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 .event__for {
-  @include event-for(event, null $spacing--base 100% null, 0, 50%)
+  @include event-for(event, null $spacing--base 100% null, 0, 50%);
 }
 
 .event__content {
@@ -65,8 +65,8 @@
 .event__figure {
   @include event-figure;
   @include size(100%, 0);
-  border-bottom-right-radius: $border-radius--lg;
   border-bottom-left-radius: $border-radius--lg;
+  border-bottom-right-radius: $border-radius--lg;
   padding-bottom: 60%;
 }
 

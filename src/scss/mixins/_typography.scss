@@ -1,35 +1,39 @@
 @mixin h1 {
   @include fluid-type($bp--tablet, $bp--desktop-xl, $font-size--h1-min, $font-size--h1-max);
-  @include margin(0 null);
   color: $color--hunter;
   font-family: $font--primary;
-  text-transform: uppercase;
   line-height: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
 }
 
 @mixin h2 {
   @include fluid-type($bp--tablet, $bp--desktop, $font-size--h2-min, $font-size--h2-max);
-  @include margin(0 null);
   font-family: $font--primary;
   font-weight: 700;
   line-height: 1;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 @mixin h3 {
   @include fluid-type($bp--tablet, $bp--desktop, $font-size--h3-min, $font-size--h3-max);
-  @include margin(0 null);
+  color: $color--hunter;
   font-family: $font--primary;
   font-weight: 400;
-  color: $color--hunter;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 @mixin h4 {
-  @include margin(0 null);
   font-family: $font--primary;
   font-size: $font-size--h4;
   font-weight: 600;
   letter-spacing: 1.5px;
   line-height: $lh--sm;
+  margin-bottom: 0;
+  margin-top: 0;
   text-transform: uppercase;
 }
 

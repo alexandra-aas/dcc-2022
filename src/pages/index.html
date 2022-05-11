@@ -2,6 +2,8 @@
 title: DCC
 ---
 
+{% extends "@templates/layouts/base.twig" %}
+
 {% block content %}
 <nav class="nav">
   <ul class="nav__items">
@@ -9,7 +11,7 @@ title: DCC
     <li class="nav__item"><a class="nav__link" href="#events">2022 Events</a></li>
     <li class="nav__item"><a class="nav__link" href="#about">About Us</a></li>
   </ul>
-  <a class="nav__cta" href="TODO: donate_link" target="_blank">Donate</a>
+  <a class="nav__cta" href="https://www.paypal.com/paypalme/dedhamcycleclub/15" target="_blank">Donate</a>
 </nav>
 
 <section class="topper">
@@ -29,7 +31,26 @@ title: DCC
     <a class="topper__cta" href="#mission">Learn More</a>
   </div>
   <div class="topper__featured-event">
-    TODO Events
+    <a class="featured-event" href="TODO" target="_blank">
+      <div class="featured-event__for">
+        <div class="stamp">
+          <h4>All Ages</h4>
+        </div>
+      </div>
+      <div class="featured-event__content">
+        <div class="featured-event__next">Next Event</div>
+        <div class="featured-event__body">
+          <div class="featured-event__month">May</div>
+          <div class="featured-event__day">27</div>
+          <h3 class="featured-event__title">Event Title</h3>
+          <p class="featured-event__location">The Key Lot</p>
+          <div class="featured-event__type">Bike Ride</div>
+        </div>
+      </div>
+      <figure class="featured-event__figure">
+        <div class="featured-event__image" style="background-image: url('https://images.ctfassets.net/aalxfiwbordy/2AUNinyTMmnmCFC1mPqrqR/9c013a15179281d6f939742a9207413b/graveyard.png')"></div>
+      </figure>
+    </a>
   </div>
 </section>
 
@@ -59,7 +80,7 @@ title: DCC
     <div class="about__sections">
       <article class="about__section">
         <figure class="about__figure">
-          <img class="about__image" src="1894.png" />
+          <img class="about__image" src="/static/img/1894.png" />
         </figure>
         <div class="about__section-content">
           <h3>Established</h3>
@@ -78,7 +99,7 @@ title: DCC
       </article>
       <article class="about__section">
         <figure class="about__figure">
-          <img class="about__image" src="2018.png" />
+          <img class="about__image" src="/static/img/2018.png" />
         </figure>
         <div class="about__section-content">
           <h3>Re-established</h3>
@@ -141,7 +162,7 @@ title: DCC
         <a class="footer__link" href="https://twitter.com/dedhamcycleclub" target="_blank">Twitter</a>
       </li>
       <li class="footer__item">
-        <a class="footer__link" href="TODO donate_link" target="_blank">Donate</a>
+        <a class="footer__link" href="https://www.paypal.com/paypalme/dedhamcycleclub/15" target="_blank">Donate</a>
       </li>
     </ul>
     <small>

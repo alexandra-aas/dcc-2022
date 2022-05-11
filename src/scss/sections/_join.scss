@@ -1,10 +1,10 @@
 .join {
   @include margin($cover-lines-size null);
   @include section-reversed;
-  background-image: image-url('pr-cycle.png');
+  background-image: url('/static/img/pr-cycle.png');
+  background-position: 95% bottom;
   background-repeat: no-repeat;
   background-size: auto 50%;
-  background-position: 95% bottom;
 
   @include mq($bp--tablet) {
     background-size: auto 90%;
